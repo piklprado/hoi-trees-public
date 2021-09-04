@@ -1,10 +1,18 @@
 # Scripts to reproduce results in 
 # Lai, Chong, Yee, Mayfield and Stouffer (2021) Ecology
+# https://doi.org/10.1101/2020.09.16.300616 
+# the Bayesian inference, figures, and diameter simulations will take a while 
+# please have copious amount of hot beverage in hand
+
+library(tidyverse)
+library(brms)
+library(future)
+plan(multiprocess)
+library(tidybayes)
+library(ggpubr)
 
 
 # Read data and fit model -------------------------------------------------
-# the Bayesian inference will take a while 
-# please have copious amount of hot beverage in hand
 source("code/fit_models.R")
 
 

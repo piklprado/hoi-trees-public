@@ -1,6 +1,6 @@
 # Reproduce Fig. 3
 
-source("code/predict_example.R")
+source("code/predict_dbh_example.R")
 
 # population-level growth curve
 newdat.pop <- 

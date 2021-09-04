@@ -1,10 +1,5 @@
 # Script to fit models
 
-library(tidyverse)
-library(brms)
-library(future)
-plan(multiprocess)
-
 # auxillary functions
 source("code/generate_model_matrix.R")
 source("code/modulus_transformation.R")
@@ -17,6 +12,8 @@ mandai <- read_csv("data/mandai_clean.csv")
 # some constant variables for the loop below
 focals <- as.character(sort(unique(mandai$Focal)))
 non.X.colnames <- c("Plot", "Year", "Tag.tree", "Focal", "DBH_mi", "G")
+neigh  <- c(focals, "OTHERS")
+spp_list <- read.csv("data/spp_list.csv")
 
 # manually generate model matrix
 in.dat <- generate.model.matrix(mandai, scale.X = TRUE) 
